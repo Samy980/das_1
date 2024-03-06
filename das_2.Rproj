@@ -1,0 +1,23 @@
+library(igraph)
+##
+## Attaching package: 'igraph'
+## The following objects are masked from 'package:stats':
+##
+## decompose, spectrum
+## The following object is masked from 'package:base':
+##
+## union
+Delete vertices from a graph
+delete_vertices(graph, v)
+graph The input graph. v The vertices to remove, a vertex sequence.
+g <- make_ring(10) %>%
+  set_vertex_attr("name", value = LETTERS[1:10])
+g
+## IGRAPH 5d48b53 UN-- 10 10 -- Ring graph
+## + attr: name (g/c), mutual (g/l), circular (g/l), name (v/c)
+## + edges from 5d48b53 (vertex names):
+## [1] A--B B--C C--D D--E E--F F--G G--H H--I I--J A--J
+V(g)
+## + 10/10 vertices, named, from 5d48b53:
+## [1] A B C D E F G H I J
+plot(g)
